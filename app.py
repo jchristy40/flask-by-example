@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 response = requests.get("https://data.cityofchicago.org/resource/4ijn-s7e5.json")
 
-parsed = json.loads(response)
+parsed = response.json()
 
 @app.route('/')
 def hello():
