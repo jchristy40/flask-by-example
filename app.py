@@ -1,15 +1,17 @@
 import requests
+import json
 from flask import Flask
 app = Flask(__name__)
 
 
 
 response = requests.get("https://data.cityofchicago.org/resource/4ijn-s7e5.json")
-#
+
+parsed = json.loads(response)
 
 @app.route('/')
 def hello():
-	return "response"
+	return parsed
 
 @app.route('/<name>')
 def hello_name(name):
