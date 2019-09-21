@@ -11,7 +11,7 @@ parsed = response.json()
 
 @app.route('/')
 def hello():
-	return parsed
+	return "{}".format(parsed)
 
 @app.route('/<name>')
 def hello_name(name):
